@@ -8,6 +8,11 @@ variable "prefix" {
   default = ""
 }
 
+variable "filepath" {
+  type    = string
+  default = "../faas/derco-backend.zip"
+}
+
 variable "api_gateway_name" {
   type    = string
   default = "api-gateway"

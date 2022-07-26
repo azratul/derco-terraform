@@ -7,7 +7,7 @@ module "lambda" {
   lambda_role_name         = "${var.prefix}-${var.lambda_role_name}"
   lambda_policy_name       = "${var.prefix}-${var.lambda_policy_name}"
   lambda_function_name     = "${var.prefix}-${var.lambda_function_name}"
-  lambda_function_filename = "${path.module}/../../lambda/derco-backend.zip"
+  lambda_function_filename = var.filepath
 }
 
 module "gateway" {
