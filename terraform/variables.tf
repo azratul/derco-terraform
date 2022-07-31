@@ -3,14 +3,39 @@ variable "stage_name" {
   default = ""
 }
 
-variable "prefix" {
+variable "prefix_role" {
   type    = string
   default = ""
 }
 
-variable "filepath" {
+variable "prefix_parent" {
   type    = string
-  default = "../faas/derco-backend.zip"
+  default = ""
+}
+
+variable "filepath_parent" {
+  type    = string
+  default = "../faas/lambda-parent.zip"
+}
+
+variable "prefix_child_01" {
+  type    = string
+  default = ""
+}
+
+variable "filepath_child_01" {
+  type    = string
+  default = "../faas/lambda-child01.zip"
+}
+
+variable "prefix_child_02" {
+  type    = string
+  default = ""
+}
+
+variable "filepath_child_02" {
+  type    = string
+  default = "../faas/lambda-child02.zip"
 }
 
 variable "api_gateway_name" {
