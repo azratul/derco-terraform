@@ -24,8 +24,7 @@ variable "db_user" {
 }
 
 variable "db_pass" {
-  type    = string
-  default = ""
+  type = string
 }
 
 variable "filepath_parent" {
