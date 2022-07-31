@@ -13,6 +13,21 @@ variable "prefix_parent" {
   default = ""
 }
 
+variable "db_name" {
+  type    = string
+  default = ""
+}
+
+variable "db_user" {
+  type    = string
+  default = ""
+}
+
+variable "db_pass" {
+  type    = string
+  default = ""
+}
+
 variable "filepath_parent" {
   type    = string
   default = "../faas/lambda-parent.zip"

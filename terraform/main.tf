@@ -8,6 +8,13 @@ module "iam" {
   lambda_policy_name = "${var.prefix_role}-${var.lambda_policy_name}"
 }
 
+module "rds" {
+  source  = "./modules/rds"
+  db_name = var.db_name
+  db_user = var.db_user
+  db_pass = var.db_pass
+}
+
 module "lambda" {
   source                   = "./modules/lambda"
   lambda_function_name     = "${var.prefix_parent}-${var.lambda_function_name}"
