@@ -20,6 +20,7 @@ module "lambda" {
   lambda_function_name     = "${var.prefix_parent}-${var.lambda_function_name}"
   lambda_function_filename = var.filepath_parent
   lambda_role_arn          = module.iam.out_lambda_role_arn
+  environment_variables    = var.environment_variables_parent
 }
 
 module "lambda_child_01" {
@@ -27,6 +28,7 @@ module "lambda_child_01" {
   lambda_function_name     = "${var.prefix_child_01}-${var.lambda_function_name}"
   lambda_function_filename = var.filepath_child_01
   lambda_role_arn          = module.iam.out_lambda_role_arn
+  environment_variables    = var.environment_variables_child01
 }
 
 module "lambda_child_02" {
@@ -34,6 +36,7 @@ module "lambda_child_02" {
   lambda_function_name     = "${var.prefix_child_02}-${var.lambda_function_name}"
   lambda_function_filename = var.filepath_child_02
   lambda_role_arn          = module.iam.out_lambda_role_arn
+  environment_variables    = var.environment_variables_child02
 }
 
 module "gateway" {
@@ -48,5 +51,5 @@ module "gateway" {
 }
 
 output "base_url" {
-  value = "curl -X GET '${module.gateway.out_url}/api/v1/post'"
+  value = "curl -X GET '${module.gateway.out_url}/api/v1/posts'"
 }

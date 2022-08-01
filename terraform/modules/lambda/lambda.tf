@@ -5,10 +5,6 @@ resource "aws_lambda_function" "lambda_function" {
   handler       = "main"
   runtime       = "go1.x"
   environment {
-    variables = {
-      "API_SECRET" = "123456"
-      "API_URL"    = "https://jsonplaceholder.typicode.com"
-      "GIN_MODE"   = "debug"
-    }
+    variables = var.environment_variables
   }
 }

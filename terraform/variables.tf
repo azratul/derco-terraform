@@ -54,20 +54,33 @@ variable "filepath_child_02" {
 
 variable "api_gateway_name" {
   type    = string
-  default = "api-gateway"
+  default = ""
 }
 
 variable "lambda_role_name" {
   type    = string
-  default = "lambda-role"
+  default = ""
 }
 
 variable "lambda_policy_name" {
   type    = string
-  default = "policy-role"
+  default = ""
 }
 
 variable "lambda_function_name" {
   type    = string
-  default = "lambda-function"
+  default = ""
 }
+
+variable "environment_variables_parent" {
+  type = map(string)
+}
+
+variable "environment_variables_child01" {
+  type = map(string)
+}
+
+variable "environment_variables_child02" {
+  type = map(string)
+}
+
